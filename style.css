@@ -1,0 +1,136 @@
+/* General */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body {
+    background: linear-gradient(135deg, #004d33, #006a4e, #009a75);
+    color: #ffffff;
+}
+
+
+/* Header */
+header {
+    background: rgba(0,106,78,0.9);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+nav ul li { list-style: none; }
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav ul li a:hover { color: #D7FBE8; }
+
+/* Logo hover effect */
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: default;
+    transition: 0.3s;
+}
+.logo:hover {
+    color: #00ff9d;
+}
+
+/* Burger menu */
+.burger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+.burger div { width: 25px; height: 3px; background-color: #ffffff; transition: 0.3s; }
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0,106,78,0.95);
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    nav ul.active { transform: translateX(0); }
+    .burger { display: flex; }
+}
+
+/* Sections */
+.section { padding: 100px 20px; text-align: center; }
+.home { display: flex; justify-content: center; align-items: center; flex-direction: column; text-shadow: 0 1px 3px rgba(0,0,0,0.4); min-height: 100vh;}
+.home h1 span:hover { color: #00ff9d; transform: scale(1.05); transition: 0.3s; cursor: pointer; }
+.home .subtitle { margin-top: 10px; font-size: 20px; }
+.home .btn { background: #00A878; color: #ffffff; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 40px; font-weight: bold; transition: 0.3s; }
+.home .btn:hover { background: #006A4E; }
+
+/* Skills */
+.skills-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+.skill-box { padding: 10px 20px; background: #00ff9d; color: #004d33; border-radius: 5px; font-weight: 600; transition: 0.3s; }
+.skill-box:hover { background: #006A4E; color: #ffffff; cursor: default; }
+
+/* Projects */
+.project-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+.project-card { background: rgba(0,255,157,0.2); padding: 20px; width: 250px; border-radius: 10px; color: #ffffff; transition: 0.3s; }
+.project-card:hover { background: #00ff9d; color: #004d33; transform: translateY(-5px); }
+
+/* Layout for two columns inside the about section */
+.about-columns-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.about-column {
+    flex: 1;
+    min-width: 250px; /* prevents too small columns */
+}
+
+
+.about-column {
+    /* Makes both columns take equal width */
+    flex: 1; 
+    /* Ensures h3 titles don't touch the grid below them */
+    min-width: 0; 
+    font-size: 15px;
+}
+
+/* Adjust the spacing for the new h3 subheadings */
+.about-column h3 {
+    margin-bottom: 15px;
+    text-align: center; /* Optional: centers the subheadings */
+    font-size: 15px;
+}
+
+
+/* Media query for mobile devices: stack the columns vertically */
+@media (max-width: 768px) {
+    .about-columns-container {
+        flex-direction: row;    /* keep side-by-side */
+        flex-wrap: wrap;        /* allows them to shrink but stay in two columns */
+    }
+
+    .about-column {
+        width: 50%;             /* still 2 columns */
+    }
+}
+
+
+
+
+
+/* Footer */
+footer { padding: 20px; background: rgba(0,106,78,0.9); color: #ffffff; text-align: center; margin-top: 50px; }
+
